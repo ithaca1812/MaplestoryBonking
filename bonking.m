@@ -75,12 +75,15 @@ for i = 1:50000
         %Selects randomly # of levels gained according to the weights, adds
         %it to your level
         level = randsample(10,1,true, weights(level-140,:)) + level;
-        
+       
+        %Uncomment this code if you wanna AFK for 1 extra level every day
+        %level = level + 1;  
     end
 end
 
 %Makes basic histogram
 histogram(bonks);
 xlabel('Number of Bonks to 200');
+mean(bonks);
 min(bonks)
 max(bonks)
